@@ -1,6 +1,6 @@
 //
 //  hyphenation.m
-//  kxvif2ne
+//  KxHTML
 //
 //  Created by Kolyvan on 14.12.12.
 //

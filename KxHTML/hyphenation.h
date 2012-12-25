@@ -1,6 +1,6 @@
 //
 //  hyphenation.h
-//  kxvif2ne
+//  KxHTML
 //
 //  Created by Kolyvan on 14.12.12.
 //  Copyright (c) 2012 Konstantin Bukreev. All rights reserved.
