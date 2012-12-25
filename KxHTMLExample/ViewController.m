@@ -42,7 +42,7 @@
     @" .fgred { color: red; }"
     @"</style>"
     @"<h3>Spans and styles</h3>"
-    @"<div><span class='bggreen'>A span with green background.</span><span>Then the span without style.</span><span class='bgyellow'> And span with yellow background.</span></div>"
+    @"<div><span class='bggreen'>A span with green background.</span> <span>Then the span without style.</span> <span class='bgyellow'> And span with yellow background.</span></div>"
     @"<h3>Inline style with margin and text align</h3>"
     @"<div style='margin:10px; background-color:#22AF89; text-align:center; font-size:12pt;'> &lt;div style='margin:10px; text-align:center;'&gt;"
     @"</div>"

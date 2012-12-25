@@ -766,8 +766,9 @@ static KxAnchor layoutWord(NSString *word,
                     
                     if (isHyperlink || decoration != KxHTMLRenderStyleTextDecorationNone)
                         renderTextDecoration(context, decoration, isHyperlink, font, color, anchor.point, wordSpace);
+                    
+                    anchor.point.x += wordSpace;
                 }
-                anchor.point.x += wordSpace;
             }
         }
     }
@@ -831,7 +832,8 @@ static KxAnchor layoutWord(NSString *word,
             if (word.length) {
                 
                 anchor = layoutWord(word, font, anchor, width, style.hyperlink.boolValue);
-                anchor.point.x += wordSpace;
+                if (word != words.lastObject)
+                    anchor.point.x += wordSpace;
             }
         }
     }
@@ -1986,7 +1988,7 @@ static NSString *fontStyleAsString(KxHTMLRenderStyleFontStyle t)
     if (![parser parse] || !reader.body)
         return nil;
     
-    NSLog(@"%@", [reader.body asHTMLString]);
+    //NSLog(@"%@", [reader.body asHTMLString]);
     //NSLog(@"%@", [reader.styleSheet asCSSString]);
         
     return [[KxHTMLRender alloc] initWithRoot:reader.body
