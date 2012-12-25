@@ -9,8 +9,7 @@ KxHTML supports limited sets of HTML elements and CSS styles.
 * HTML attributes: class, style
 * CSS: declared in style element and inline
 * CSS styles: color, background-color, margin, font-family, font-size, font-weight, font-style, text-decoration, text-align 
-
-Syllabification via Hyphenation algorithm 'П.Хpистова в модификации Дымченко и Ваpсанофьева'.
+* Syllabification via Hyphenation algorithm 'П.Хpистова в модификации Дымченко и Ваpсанофьева'.
 
 ### Usage
 
@@ -22,7 +21,7 @@ Syllabification via Hyphenation algorithm 'П.Хpистова в модифик�
 * Link with libKxHTML.a and libxml2.dylib
 * Add -ObjC to Other linker flag
 
-Also look at HTMLRenderExample as DEMO project
+Also look at KxHTMLExample as DEMO project
 
 ### Requirements
 
