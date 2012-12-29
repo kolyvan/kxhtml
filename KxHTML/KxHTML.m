@@ -1974,7 +1974,6 @@ static NSString *fontStyleAsString(KxHTMLRenderStyleFontStyle t)
     KxHTMLElement       *_root;
     NSArray             *_links;
     NSArray             *_images;
-    KxHTMLRenderStyle   *_style;
 }
 
 + (id) renderFromHTML:(NSData *) html
@@ -2008,7 +2007,7 @@ static NSString *fontStyleAsString(KxHTMLRenderStyleFontStyle t)
         KxHTMLRenderStyleSheet *defaultCSS = [KxHTMLRenderStyleSheet defaultStyleSheet];
         _styleSheet = styleSheet ? [defaultCSS compose:styleSheet] : [defaultCSS copy];
         
-        _style = [KxHTMLRenderStyle defaultStyle];
+        _baseStyle = [[KxHTMLRenderStyle defaultStyle] copy];
             
         _links = [_root collectNodes:[KxHTMLHyperlinkElement class]];
         
@@ -2022,7 +2021,7 @@ static NSString *fontStyleAsString(KxHTMLRenderStyleFontStyle t)
 - (CGFloat) layoutWithWidth: (CGFloat) width
 {
     KxAnchor anchor = {0};
-    anchor = [_root layout:width anchor:anchor style:_style styleSheet:_styleSheet];    
+    anchor = [_root layout:width anchor:anchor style:_baseStyle styleSheet:_styleSheet];    
     return anchor.line;
 }
 
@@ -2030,7 +2029,7 @@ static NSString *fontStyleAsString(KxHTMLRenderStyleFontStyle t)
                context: (CGContextRef) context
 {
     KxAnchor anchor = {rect.origin, rect.origin.y};
-    anchor = [_root render:rect anchor:anchor style:_style styleSheet:_styleSheet context:context];
+    anchor = [_root render:rect anchor:anchor style:_baseStyle styleSheet:_styleSheet context:context];
     return anchor.line - rect.origin.y;
 }
 

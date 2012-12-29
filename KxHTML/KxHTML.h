@@ -106,6 +106,7 @@ typedef enum {
 @interface KxHTMLRender : NSObject
 
 @property (readonly, nonatomic, strong) KxHTMLRenderStyleSheet *styleSheet;
+@property (readonly, nonatomic, strong) KxHTMLRenderStyle *baseStyle;
 
 + (id) renderFromHTML:(NSData *) html
              encoding:(NSStringEncoding) encoding
