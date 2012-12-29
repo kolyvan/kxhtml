@@ -9,7 +9,7 @@
 
 static NSString * stringFromHTMLSymbol(NSString * s)
 {
-    if ([s hasPrefix:@"#"]) {
+    if ([s hasPrefix:@"#"] && s.length <= 6) {
         
         unichar ch = (unichar)[[s substringFromIndex:1] integerValue];
         return [NSString stringWithFormat:@"%C", ch];
