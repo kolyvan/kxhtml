@@ -2026,11 +2026,12 @@ static NSString *fontStyleAsString(KxHTMLRenderStyleFontStyle t)
     return anchor.line;
 }
 
-- (void) drawInRect: (CGRect) rect
-            context: (CGContextRef) context
+- (CGFloat) drawInRect: (CGRect) rect
+               context: (CGContextRef) context
 {
     KxAnchor anchor = {rect.origin, rect.origin.y};
-    [_root render:rect anchor:anchor style:_style styleSheet:_styleSheet context:context];
+    anchor = [_root render:rect anchor:anchor style:_style styleSheet:_styleSheet context:context];
+    return anchor.line - rect.origin.y;
 }
 
 - (BOOL) isUserInteractive

@@ -113,8 +113,8 @@ typedef enum {
 
 - (CGFloat) layoutWithWidth: (CGFloat) width;
 
-- (void) drawInRect: (CGRect) rect
-            context: (CGContextRef) context;
+- (CGFloat) drawInRect: (CGRect) rect
+               context: (CGContextRef) context;
 
 - (BOOL) isUserInteractive;
 - (NSURL *) hitTest:(CGPoint)loc;
